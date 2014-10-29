@@ -4,6 +4,7 @@ require 'spec_helper'
 require File.expand_path("../dummy/config/environment", __FILE__)
 require 'rspec/rails'
 require "capybara/rspec"
+require 'factory_girl'
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
@@ -12,7 +13,7 @@ require "capybara/rspec"
 # run twice. It is recommended that you do not name files matching this glob to
 # end with _spec.rb. You can configure this pattern with with the --pattern
 # option on the command line or in ~/.rspec, .rspec or `.rspec-local`.
-Dir[Rails.root.join("/support/**/*.rb")].each { |f| require f }
+Dir[Rails.root.join("../support/**/*.rb")].each { |f| require f }
 
 # Checks for pending migrations before tests are run.
 # If you are not using ActiveRecord, you can remove this line.

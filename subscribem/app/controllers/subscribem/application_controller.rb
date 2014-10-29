@@ -2,6 +2,13 @@ module Subscribem
 	class ApplicationController < ActionController::Base
 		helper_method :current_account, :current_user, :user_signed_in?
 
+		def authenticate_user!
+			unless user_signed_in?
+				flash[:notice] = 'Please sign in.'
+				redirect_to '/sign_in'
+			end
+		end
+
 		def current_account
 			if user_signed_in?
 				@current_account ||= begin
